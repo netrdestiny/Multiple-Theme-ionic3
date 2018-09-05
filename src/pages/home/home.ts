@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AppState } from '../../app/app.global';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,15 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  theme: any;
 
+  constructor(public global: AppState,public navCtrl: NavController) {
+
+  }
+
+  changeTheme(theme) {
+    console.log('IN');
+    this.global.set('theme', theme);
   }
 
 }
